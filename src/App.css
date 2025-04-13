@@ -1,0 +1,99 @@
+/* Overall to-do list container */
+.to-do-list {
+    font-family: Arial, sans-serif;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f4f4f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading styling */
+.to-do-list h1 {
+    text-align: center;
+    color: #333;
+}
+
+/* Styling for input box */
+.to-do-list input {
+    padding: 8px;
+    width: 80%;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* Add button styling */
+.add-btn {
+    padding: 8px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.add-btn:hover {
+    background-color: #45a049;
+}
+
+/* Styling for the ordered list */
+ol {
+    padding-left: 20px;
+}
+
+/* Each list item (task) */
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #fff;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Text inside each task */
+.text {
+    flex-grow: 1;
+    font-size: 16px;
+    color: #333;
+}
+
+/* Delete button styling */
+.delete-btn {
+    background-color: #f44336;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background-color: #e53935;
+}
+
+/* Move buttons (Up/Down) */
+.move-btn {
+    background-color: #2196F3;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.move-btn:hover {
+    background-color: #1976D2;
+}
+/* Container for action buttons */
+.button-group {
+    display: flex;
+    gap: 8px; /* Adjust spacing between buttons */
+    margin-left: 10px;
+}
+

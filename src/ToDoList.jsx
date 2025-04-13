@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 function ToDoList () {
-    const [tasks,setTasks] = useState (["eat breakfast", "moring walk", "reading newspaper" ]);
+    const [tasks,setTasks] = useState (["Eat breakfast", "Moring walk", "Reading newspaper" ]);
     const [newTasks, setNewTasks] = useState (" ");
 
     function handleInputChange (event) {
@@ -12,17 +12,14 @@ function ToDoList () {
             setTasks (t => [...t,newTasks]);
             setNewTasks(" ");
         }
-
     }
 
     function handleDeleteTask (index) {
         const updatedTasks = tasks.filter((_,i) => i !== index);
         setTasks(updatedTasks);
-
     }
 
     function handleMoveTaskUp (index) {
-
         if (index > 0) {
             const updatedTasks = [...tasks];
             [updatedTasks [index], updatedTasks [index-1]]=
@@ -40,11 +37,7 @@ function ToDoList () {
             setTasks(updatedTasks);
 
         }
-       
-
     }
-
-
     return(
         <div className="to-do-list">
             <h1>To-Do-List</h1>
@@ -59,7 +52,7 @@ function ToDoList () {
             <ol>
                 {tasks.map ((task,index) => <li key={index}>
                     <span className="text">{task}</span>
-
+                    <div className="button-group">
                     <button className="delete-btn"
                             onClick={() => handleDeleteTask(index)}
                             
@@ -73,14 +66,10 @@ function ToDoList () {
                     
                     >Down</button>
 
-
+                    </div>
                 </li> )}
-
             </ol>
-
         </div>
-
     );
-
 }
 export default ToDoList;
