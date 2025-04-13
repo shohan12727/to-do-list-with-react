@@ -8,11 +8,16 @@ function ToDoList () {
     }
 
     function handleAddTask () {
-        if
+        if (newTasks.trim () !== " ") {
+            setTasks (t => [...t,newTasks]);
+            setNewTasks(" ");
+        }
 
     }
 
-    function handleDeleteTask () {
+    function handleDeleteTask (index) {
+        const updatedTasks = tasks.filter((_,i) => i !== index);
+        setTasks(updatedTasks);
 
     }
 
@@ -30,15 +35,20 @@ function ToDoList () {
             <h1>To-Do-List</h1>
 
             <div>
-                <input></input> 
-                <button className="add-btn">Add</button>
+                <input onChange={handleInputChange}></input> 
+                <button className="add-btn"
+                onClick={handleAddTask}
+                >Add</button>
             </div>
 
             <ol>
                 {tasks.map ((task,index) => <li key={index}>
                     <span className="text">{task}</span>
 
-                    <button className="delete-btn">Delete</button>
+                    <button className="delete-btn"
+                            onClick={() => handleDeleteTask(index)}
+                            
+                            >Delete</button>
                     <button className="move-btn">Up</button>
                     <button className="move-btn">Down</button>
 
