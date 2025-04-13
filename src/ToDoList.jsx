@@ -21,11 +21,26 @@ function ToDoList () {
 
     }
 
-    function handleMoveTaskUp () {
+    function handleMoveTaskUp (index) {
 
+        if (index > 0) {
+            const updatedTasks = [...tasks];
+            [updatedTasks [index], updatedTasks [index-1]]=
+            [updatedTasks [index-1], updatedTasks [index]];
+            setTasks(updatedTasks);
+
+        }
     }
 
-    function handleMoveTaskDown () {
+    function handleMoveTaskDown (index) {
+        if(index <index.length-1 ){
+            const updatedTasks = [...tasks];
+            [ updatedTasks[index], updatedTasks[index+1] ]=
+            [ updatedTasks[index+1], updatedTasks[index] ]
+            setTasks(updatedTasks);
+
+        }
+       
 
     }
 
@@ -49,8 +64,14 @@ function ToDoList () {
                             onClick={() => handleDeleteTask(index)}
                             
                             >Delete</button>
-                    <button className="move-btn">Up</button>
-                    <button className="move-btn">Down</button>
+                    <button className="move-btn"
+                            onClick={ () => handleMoveTaskUp(index)}
+                       
+                       >Up</button>
+                    <button className="move-btn" 
+                            onClick={ () => handleMoveTaskDown(index)}
+                    
+                    >Down</button>
 
 
                 </li> )}
